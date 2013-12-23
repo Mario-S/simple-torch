@@ -4,8 +4,12 @@ import java.lang.reflect.Method;
 
 import android.os.IBinder;
 import android.util.Log;
-import android.widget.Toast;
 
+/**
+ * Class to look for a service to manage LED access on motorola device.
+ * @author Mario
+ *
+ */
 class DroidLED {
 	
 	private static final String TAG = DroidLED.class.getSimpleName();

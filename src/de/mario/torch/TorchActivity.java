@@ -1,5 +1,10 @@
 package de.mario.torch;
 
+/**
+ * Simple activity to control the flash light.
+ * @author Mario
+ *
+ */
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,13 +17,12 @@ public class TorchActivity extends Activity {
 
 	private static final String TAG = TorchActivity.class.getSimpleName();
 
-	private DroidLED led;
-
+	private static DroidLED led = new DroidLED();
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_torch);
-		led = new DroidLED();
 	}
 
 	@Override
@@ -30,7 +34,6 @@ public class TorchActivity extends Activity {
 
 	public void onToggleClicked(View view) {
 		boolean on = ((ToggleButton) view).isChecked();
-
 		toggleFlashLight(on);
 	}
 
@@ -41,7 +44,7 @@ public class TorchActivity extends Activity {
 			toggleFlashLight(false);
 		}
 	}
-
+	
 	private void toggleFlashLight(boolean on) {
 
 		try {
